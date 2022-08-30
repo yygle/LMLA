@@ -6,7 +6,7 @@ from test_ideas.test_cosformer.official_cosformer_attention_jit import Cosformer
 cudnn.benchmark = True
 
 device = 'cuda:5'
-# model = resnet50().to(device)
+
 embed_dim, num_heads, causal = 256, 4, False
 model = CosformerAttention(embed_dim=embed_dim, num_heads=num_heads, causal=causal).to(device)
 with open('./res_fast.txt', 'w', encoding='utf8') as fout:
