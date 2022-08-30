@@ -1424,7 +1424,7 @@ class MultiHeadedAttention_cosformer_official_degenerate(nn.Module):
             if self.cosformer_version == 1:
                 x = self.right_product_single_cos(query, key, value, mask)
             elif self.cosformer_version == 2:  # enlarge m
-                x = self.right_product_single_cos2(query, key, value, mask)
+                x = self.right_product_single_cos2(query, key, value, mask) # LMLA
             elif self.cosformer_version == 3:  # with div term
                 x = self.right_product_single_cos3(query, key, value, mask)
             elif self.cosformer_version == 4:  # with sigmoid(q, k)
@@ -1444,7 +1444,7 @@ class MultiHeadedAttention_cosformer_official_degenerate(nn.Module):
             if self.cosformer_version == 1:
                 x = self.left_product_single_cos(query, key, value, mask)
             elif self.cosformer_version == 2:  # enlarge m
-                x = self.left_product_single_cos2(query, key, value, mask)
+                x = self.left_product_single_cos2(query, key, value, mask) # LMLA
             elif self.cosformer_version == 3:  # with div term
                 x = self.left_product_single_cos3(query, key, value, mask)
             elif self.cosformer_version == 4:  # with sigmoid(q, k)
